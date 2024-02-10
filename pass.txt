@@ -1,0 +1,24 @@
+uDay@1234567890! password
+
+8UP49SK8KSB3YYKN3XH1M9HL ---> Recovery code
+
+ACae62e50debd0fcccb3371b25a27ba206 ---> Account SID
+
+ffa5b92d9c99f06e4b429db98454f5ed  ----> Auth code
+
++16593365023  ----> My number on twilio
+
+
+
+from twilio.rest import Client
+
+account_sid = 'ACae62e50debd0fcccb3371b25a27ba206'
+auth_token = '[AuthToken]'
+client = Client(account_sid, auth_token)
+
+message = client.messages.create(
+  from_='+16593365023',
+  to='+919010628678'
+)
+
+print(message.sid)
